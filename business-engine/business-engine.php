@@ -3,7 +3,7 @@
  * Plugin Name: Business Engine - Multi-Niche Management
  * Plugin URI:  https://github.com/business-engine/engine
  * Description: Sistema modular de gestão financeira, precificação multicanal, CRM relacional e esteira operacional para micro e pequenas empresas.
- * Version: 1.4.3
+ * Version: 1.4.4
  * Author:      Business Engine Team
  * Text Domain: business-engine
  * Domain Path: /languages
@@ -19,7 +19,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('BE_VERSION', '1.4.3');
+define('BE_VERSION', '1.4.4');
 define('BE_PLUGIN_FILE', __FILE__);
 define('BE_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('BE_PLUGIN_URL', plugin_dir_url(__FILE__));
