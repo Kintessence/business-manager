@@ -1,0 +1,364 @@
+:root {
+  --be-primary: #0f172a;
+  --be-accent: #2563eb;
+  --be-accent-hover: #1d4ed8;
+  --be-accent-subtle: #eff6ff;
+  --be-bg: #f8fafc;
+  --be-card: #ffffff;
+  --be-border: #cbd5e1;
+  --be-border-subtle: #e2e8f0;
+  --be-text: #0f172a;
+  --be-text-muted: #64748b;
+  --be-success: #10b981;
+  --be-warning: #f59e0b;
+  --be-danger: #ef4444;
+
+  --be-cat-ingrediente: #2563eb;
+  --be-cat-embalagem:   #7c3aed;
+  --be-cat-decoracao:   #d97706;
+  --be-cat-acabamento:  #059669;
+  --be-cat-outros:      #64748b;
+}
+
+.be-wrap {
+  margin: 20px 20px 0 2px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--be-text);
+  font-size: 14px;
+}
+
+.be-card {
+  background: var(--be-card);
+  border: 1px solid var(--be-border-subtle);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  margin-bottom: 20px;
+}
+
+.be-header-title h1 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--be-primary);
+}
+
+.be-header-title p {
+  font-size: 14px;
+  color: var(--be-text-muted);
+  margin: 4px 0 0;
+}
+
+/* Controles de Formulário Padronizados (34px) */
+.be-wrap .be-table-control,
+.be-modal-input {
+  height: 34px !important;
+  line-height: 32px !important;
+  border: 1px solid var(--be-border-subtle) !important;
+  background-color: #ffffff !important;
+  border-radius: 6px !important;
+  padding: 0 10px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--be-text) !important;
+  box-sizing: border-box !important;
+  outline: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.be-wrap select.be-table-control,
+select.be-modal-input {
+  padding-right: 24px !important;
+  cursor: pointer !important;
+}
+
+.be-wrap .be-table-control:hover,
+.be-modal-input:hover {
+  border-color: var(--be-border) !important;
+}
+
+.be-wrap .be-table-control:focus,
+.be-modal-input:focus {
+  border-color: var(--be-accent) !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.12) !important;
+}
+
+/* Botões Padronizados */
+.be-btn-primary {
+  height: 38px;
+  padding: 0 18px;
+  background: var(--be-accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.be-btn-primary:hover {
+  background: var(--be-accent-hover);
+  color: #ffffff;
+}
+
+.be-pill-btn {
+  background: var(--be-accent-subtle);
+  border: 1px solid #bfdbfe;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--be-accent);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.be-pill-btn:hover {
+  background: var(--be-accent);
+  color: #ffffff;
+  border-color: var(--be-accent);
+}
+
+.be-pill-btn-danger {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #dc2626;
+}
+
+.be-pill-btn-danger:hover {
+  background: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+
+/* Tooltips */
+.be-help-tip {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 50% !important;
+  background: #e2e8f0 !important;
+  color: #475569 !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  cursor: help !important;
+  margin-left: 6px !important;
+  position: relative !important;
+  vertical-align: middle !important;
+  line-height: 1 !important;
+}
+
+.be-help-tip:hover {
+  background: var(--be-accent) !important;
+  color: #ffffff !important;
+}
+
+.be-help-tip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  width: 240px;
+  z-index: 999999;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  text-align: left;
+  white-space: normal;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+}
+
+.be-help-tip::before {
+  content: "";
+  position: absolute;
+  bottom: 115%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0f172a transparent transparent transparent;
+  z-index: 999999;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+  pointer-events: none;
+}
+
+.be-help-tip:hover::after,
+.be-help-tip:hover::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Raio-X */
+.rx-card-item {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.2s ease;
+}
+
+.rx-card-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.rx-tip-text {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.35;
+  margin-top: 5px;
+  max-height: 80px;
+  opacity: 1;
+  overflow: hidden;
+  transition: max-height 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, margin 0.25s ease;
+}
+
+#rx-panel.rx-tips-dismissed .rx-tip-text {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+.be-actions-cell {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.be-icon-btn {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  min-height: 28px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border: 1px solid var(--be-border-subtle) !important;
+  border-radius: 6px !important;
+  background: #ffffff !important;
+  cursor: pointer !important;
+  color: #475569 !important;
+  font-size: 13px !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+  transition: all 0.15s ease !important;
+}
+
+.be-icon-btn svg {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+}
+
+.be-icon-btn:hover {
+  background: var(--be-bg) !important;
+  border-color: var(--be-border) !important;
+  color: var(--be-accent) !important;
+}
+
+.be-icon-btn-del {
+  color: #ef4444 !important;
+}
+
+.be-icon-btn-del:hover {
+  background: #fef2f2 !important;
+  border-color: #fca5a5 !important;
+  color: #dc2626 !important;
+}
+
+.be-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.be-badge-info { background: #e0f2fe; color: #0369a1; }
+
+/* Barra de Busca Universal */
+.be-toolbar-standard {
+  display: flex !important;
+  gap: 12px !important;
+  align-items: center !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+}
+
+.be-toolbar-standard .be-search-input {
+  flex: 1 !important;
+  height: 38px !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--be-border-subtle) !important;
+  padding: 0 12px !important;
+  font-size: 13px !important;
+  background: #ffffff !important;
+}
+
+.be-toolbar-standard .be-filter-select {
+  width: 220px !important;
+  min-width: 220px !important;
+  max-width: 220px !important;
+  height: 38px !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--be-border-subtle) !important;
+  padding: 0 12px !important;
+  font-size: 13px !important;
+  background: #ffffff !important;
+}
+
+.be-toolbar-standard .be-btn-primary {
+  height: 38px !important;
+  padding: 0 20px !important;
+  white-space: nowrap !important;
+}
+
+.be-toolbar-standard .be-pill-btn {
+  height: 38px !important;
+  padding: 0 16px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+}
+/* Padronização Estrita de Cabeçalhos e Células */
+.be-interactive-table th {
+  text-align: center !important;
+  vertical-align: middle !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
+}
+
+.be-interactive-table th.col-align-left,
+.be-interactive-table td.col-align-left {
+  text-align: left !important;
+}
+
+.be-interactive-table th.col-align-center,
+.be-interactive-table td.col-align-center {
+  text-align: center !important;
+}
+
+.be-interactive-table th.col-align-right,
+.be-interactive-table td.col-align-right {
+  text-align: right !important;
+}
